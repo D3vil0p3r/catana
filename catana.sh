@@ -185,14 +185,14 @@ prmpt="Chars to remove:"
 pos="rm"
 flt_wl=$(Menu "$flt_wl" "$quest" "$prmpt" "$pos")
 echo
-
-echo "Do you wish some characters to be present?"
-PS3='Answer:'
-select yn in "Yes" "No"; do
-   case $yn in
-      Yes ) echo "Type the characters or regex [i.e., @|\\$|#|\?]:"; read spechar; flt_wl=$(echo "$flt_wl" | grep -E --text "$spechar"); break;;
-      No ) break;;
-   esac
+while true; do
+    echo "Do you wish some characters to be present?"
+    read -p "Answer [Yes/No]: " yn
+    case $yn in
+        [Yy]* ) echo "Type the characters or regex [i.e., @|\\$|#|\?]:"; read spechar; flt_wl=$(echo "$flt_wl" | grep -E --text "$spechar"); break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
 done
 echo
 
