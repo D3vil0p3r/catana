@@ -10,9 +10,11 @@ catana filters your wordlist according to the specified password policy.
 Syntax: ./catana.sh [-h | i | o]
 
 Options:
-h     Print this Help.
-i     Input wordlist.
-o     Print to a file.
+| Argument | Input Example | Description |
+| -------- | ---------- | ----------- |
+| `-h` | | Print this Help |
+| `-i` | /usr/share/wordlists/passwords.txt | Input wordlist |
+| `-o` | output.txt | Print to a file |
 
-Usage Example:
+Usage Example:\
 ./catana.sh -i rockyou.txt
