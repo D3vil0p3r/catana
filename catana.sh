@@ -191,7 +191,7 @@ while true; do
     echo "Do you wish some characters to be present?"
     read -p "Answer [Yes/No]: " yn
     case $yn in
-        [Yy]* ) echo "Type the characters or regex [i.e., @|\\$|#|\?]:"; read spechar; flt_wl=$(echo "$flt_wl" | grep -E --text "$spechar"); break;;
+        [Yy]* ) echo "Type the characters or regex [i.e., @|\\$|#|\?]:"; read spechar; flt_wl=$(echo "$flt_wl" | grep -P --text "$spechar"); break;;
         [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
