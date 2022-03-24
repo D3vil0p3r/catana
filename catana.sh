@@ -130,11 +130,13 @@ while getopts ":hi:o:" option; do #When using getopts, putting : after an option
       o) # Enter an output filename
          out=$OPTARG
          if [ -f ${out} ]; then
-            echo "${out} already exist! Do you want to overwrite it?"
-            select yn in "Yes" "No"; do
+            while true; do
+               echo "${out} already exist! Do you want to overwrite it?"
+               read -p "Answer [Yes/No]: " yn
                case $yn in
-                  Yes ) rm -rf ${out}; break;;
-                  No ) break;;
+                  [Yy]* ) rm -rf ${out}; break;;
+                  [Nn]* ) break;;
+                  * ) echo "Please answer yes or no.";;
                esac
             done
          fi
