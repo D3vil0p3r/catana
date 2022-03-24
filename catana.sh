@@ -20,9 +20,8 @@ Help()
    # Display Help
    echo
    echo "CATANA filters your wordlist according to the specified password policy."
-   echo "$(basename "$0") [-h] [-i <wordlist.txt>] [-o <filename.txt>]"
    echo
-   echo "Syntax: ./catana.sh [-h|i|o]"
+   echo "$(basename "$0") [-h] [-i <wordlist.txt>] [-o <filename.txt>]"
    echo
    echo "Options:"
    echo "h     Print this Help."
