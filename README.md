@@ -15,6 +15,6 @@ Options:
 | `-i` | /usr/share/wordlists/passwords.txt | Input wordlist |
 | `-o` | output.txt | Print to a file |
 
-Usage Example:\
+Usage Examples:\
 ./catana.sh -i rockyou.txt\
 ./catana.sh -i rockyou.txt -o wl.txt
