@@ -28,8 +28,9 @@ Help()
    echo "i     Input wordlist."
    echo "o     Print to a file."
    echo
-   echo "Usage Example:"
+   echo "Usage Examples:"
    echo "./catana.sh -i rockyou.txt"
+   echo "./catana.sh -i rockyou.txt -o wl.txt"
    echo
    echo "Reference to character classes: https://www.gnu.org/software/grep/manual/html_node/Character-Classes-and-Bracket-Expressions.html"
 }
