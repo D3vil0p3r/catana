@@ -17,3 +17,4 @@ Options:
 
 Usage Example:\
 ./catana.sh -i rockyou.txt
+./catana.sh -i rockyou.txt -o wl.txt
