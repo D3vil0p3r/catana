@@ -44,7 +44,7 @@ cecho() {
 
 	rand=$(( RANDOM % 17 ))
 
-    echo -n -e "${COLOURS[$rand]}"
+    echo -e "${COLOURS[$rand]}"
 }
 
 ############################################################
