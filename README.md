@@ -1,6 +1,6 @@
 # CATANA - CUT your Wordlist!
 
-![image](https://user-images.githubusercontent.com/83867734/159940530-a1cff404-057f-4bb1-9588-5653549eebd2.png)
+![image](https://user-images.githubusercontent.com/83867734/165377486-cbae6ee7-80bc-4aaa-a7c3-351ef69ab3f3.png)
 
 CATANA filters your wordlist according to the specified password policy.
 
