@@ -13,12 +13,46 @@ punct='[[:punct:]]'
 space='[[:space:]]'
 
 ############################################################
+# Colors                                                   #
+############################################################
+
+cecho() {
+	# Reset
+	Color_Off='\033[0m'       # Text Reset
+
+	# Regular Colors
+	Black='\033[0;30m'        # Black
+	Red='\033[0;31m'          # Red
+	Green='\033[0;32m'        # Green
+	Yellow='\033[0;33m'       # Yellow
+	Blue='\033[0;34m'         # Blue
+	Purple='\033[0;35m'       # Purple
+	Cyan='\033[0;36m'         # Cyan
+	White='\033[0;37m'        # White
+
+	# Bold
+	BBlack='\033[1;30m'       # Black
+	BRed='\033[1;31m'         # Red
+	BGreen='\033[1;32m'       # Green
+	BYellow='\033[1;33m'      # Yellow
+	BBlue='\033[1;34m'        # Blue
+	BPurple='\033[1;35m'      # Purple
+	BCyan='\033[1;36m'        # Cyan
+	BWhite='\033[1;37m'       # White
+
+	COLOURS=($Color_Off $Black $Red $Green $Yellow $Blue $Purple $Cyan $White $BBlack $BRed $BGreen $BYellow $BBlue $BPurple $BCyan $BWhite)
+
+	rand=$(( RANDOM % 17 ))
+
+    echo -e "${COLOURS[$rand]}"
+}
+
+############################################################
 # Help                                                     #
 ############################################################
 Help()
 {
    # Display Help
-   echo
    echo "CATANA filters your wordlist according to the specified password policy."
    echo
    echo "$(basename "$0") [-h] [-i <wordlist.txt>] [-o <filename.txt>]"
@@ -102,11 +136,14 @@ done
 echo "$wl_flt"
 } 
 
+cecho
+
 ############################################################
 # Banner                                                     #
 ############################################################
 #cat banner.txt | gzip | base64
-base64 -d <<<"H4sIAAAAAAAAA61RsQ3DMAzbc4VGqUO9d+ofFaCcUaD6qT/0slK25WgqMpQGGNEU5SQmStgpbOi8P4HH63YKuq0T6PP+3ypjf0NWVSO8iOgyu3g6jZdVI6JJe7RH15BgFpl1iTCzeZD0gYIiZee0SkQU/xiDLGYa1phrnaJ91keEueHq4JgGxUU6pSQt9XFKbBohR9qVx+aQTtedPK3y+fFizRqeMNwiMiWEprV9AZQpuGxQAgAA" | gunzip
+base64 -d <<<"H4sIAAAAAAAAA61QuQ3DQAzrPYVKKUWuT5U9IoAeI0C0U3bIZJHuVZHiiugAWhRJnW2ivZLZHWnKE4gu3cVdKTylHBEdcIY9XI06skjvU4SZYQFSF4o3g1YcUoqIAvBFiJ3w0/aiQth7vyLMheBOgQb4BEaDkqZ+3RJDkOdIK7MYNmp0PcmGlD4/Xqyg+NMFQ0Q6daJL+vGzsVURuD+9Hq/bVmm64vP+3zm+7/tQm1oCAAA=" | gunzip
+
 echo
 echo "CATANA - CUT your Wordlist!"
 ############################################################
