@@ -21,7 +21,7 @@ cecho() {
 	Color_Off='\033[0m'       # Text Reset
 
 	# Regular Colors
-	Black='\033[0;30m'        # Black
+	#Black='\033[0;30m'        # Black
 	Red='\033[0;31m'          # Red
 	Green='\033[0;32m'        # Green
 	Yellow='\033[0;33m'       # Yellow
@@ -31,7 +31,7 @@ cecho() {
 	White='\033[0;37m'        # White
 
 	# Bold
-	BBlack='\033[1;30m'       # Black
+	#BBlack='\033[1;30m'       # Black
 	BRed='\033[1;31m'         # Red
 	BGreen='\033[1;32m'       # Green
 	BYellow='\033[1;33m'      # Yellow
@@ -58,6 +58,7 @@ Help()
    echo "$(basename "$0") [-h] [-i <wordlist.txt>] [-o <filename.txt>]"
    echo
    echo "Options:"
+   echo "c     Random colored output."
    echo "h     Print this Help."
    echo "i     Input wordlist."
    echo "o     Print to a file."
@@ -134,30 +135,17 @@ do
     esac
 done
 echo "$wl_flt"
-} 
-
-cecho
-
-############################################################
-# Banner                                                     #
-############################################################
-#cat banner.txt | gzip | base64
-base64 -d <<<"H4sIAAAAAAAAA61QuQ3DQAzrPYVKKUWuT5U9IoAeI0C0U3bIZJHuVZHiiugAWhRJnW2ivZLZHWnKE4gu3cVdKTylHBEdcIY9XI06skjvU4SZYQFSF4o3g1YcUoqIAvBFiJ3w0/aiQth7vyLMheBOgQb4BEaDkqZ+3RJDkOdIK7MYNmp0PcmGlD4/Xqyg+NMFQ0Q6daJL+vGzsVURuD+9Hq/bVmm64vP+3zm+7/tQm1oCAAA=" | gunzip
-
-echo
-echo "CATANA - CUT your Wordlist!"
-############################################################
-############################################################
-# Main program                                             #
-############################################################
-############################################################
+}
 
 ############################################################
 # Process the input options. Add options as needed.        #
 ############################################################
 # Get the options
-while getopts ":hi:o:" option; do #When using getopts, putting : after an option character means that it requires an argument (i.e., 'h').
+while getopts ":chi:o:" option; do #When using getopts, putting : after an option character means that it requires an argument (i.e., 'i:' requires arg).
    case "${option}" in
+      c) # colored output
+         cecho
+         ;;
       h) # display Help
          Help >&2
          exit 0
@@ -188,7 +176,22 @@ while getopts ":hi:o:" option; do #When using getopts, putting : after an option
          ;;
    esac
 done
+
+############################################################
+# Banner                                                     #
+############################################################
+#cat banner.txt | gzip | base64
+base64 -d <<<"H4sIAAAAAAAAA61QuQ3DQAzrPYVKKUWuT5U9IoAeI0C0U3bIZJHuVZHiiugAWhRJnW2ivZLZHWnKE4gu3cVdKTylHBEdcIY9XI06skjvU4SZYQFSF4o3g1YcUoqIAvBFiJ3w0/aiQth7vyLMheBOgQb4BEaDkqZ+3RJDkOdIK7MYNmp0PcmGlD4/Xqyg+NMFQ0Q6daJL+vGzsVURuD+9Hq/bVmm64vP+3zm+7/tQm1oCAAA=" | gunzip
+
 echo
+echo "CATANA - CUT your Wordlist!"
+echo
+############################################################
+############################################################
+# Main program                                             #
+############################################################
+############################################################
+
 # mandatory arguments
 if [ ! "$wl" ]; then
   Help >&2
