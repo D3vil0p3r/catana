@@ -4,9 +4,9 @@
 
 CATANA filters your wordlist according to the specified password policy.
 
-catana.sh [-c] [-h] [-i <wordlist.txt>] [-o <filename.txt>]
+catana [-c] [-h] [-i <wordlist.txt>] [-o <filename.txt>]
 
-Syntax: ./catana.sh [-h | i | o]
+Syntax: ./catana [-h | i | o]
 
 Options:
 | Argument | Input Example | Description |
@@ -21,11 +21,11 @@ Clone the repository by:
 ```
 git clone https://github.com/D3vil0per/catana
 cd catana
-chmod 755 catana.sh
+chmod 755 catana
 ```
 # Usage
 ```
-./catana.sh -i rockyou.txt\
-./catana.sh -i rockyou.txt -o wl.txt
+./catana -i rockyou.txt\
+./catana -i rockyou.txt -o wl.txt
 ```
 Note: if the input wordlist has root permission, you need to use `sudo`.
