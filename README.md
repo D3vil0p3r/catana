@@ -17,15 +17,28 @@ Options:
 | `-o` | output.txt | Print to a file |
 
 # Install
+
 Clone the repository by:
+
 ```
 git clone https://github.com/D3vil0per/catana
 cd catana
 chmod 755 catana
 ```
+
+Or on BlackArch Linux:
+
+```
+pacman -S catana
+```
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/catana.svg)](https://repology.org/project/catana/versions)
+
 # Usage
+
 ```
 ./catana -i rockyou.txt\
 ./catana -i rockyou.txt -o wl.txt
 ```
+
 Note: if the input wordlist has root permission, you need to use `sudo`.
