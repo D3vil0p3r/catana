@@ -212,13 +212,13 @@ echo
 echo "Gimme some information about the Password Policy"
 echo
 
-quest="What is the first character?"
+quest="What kind is the first character?"
 prmpt="First character:"
 pos="first"
 flt_wl=$(Menu "$flt_wl" "$quest" "$prmpt" "$pos")
 echo
 
-quest="What is the last character?"
+quest="What kind is the last character?"
 prmpt="Last character:"
 pos="last"
 flt_wl=$(Menu "$flt_wl" "$quest" "$prmpt" "$pos")
