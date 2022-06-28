@@ -37,8 +37,8 @@ pacman -S catana
 # Usage
 
 ```
-./catana -i rockyou.txt\
-./catana -i rockyou.txt -o wl.txt
+catana -i rockyou.txt\
+catana -i rockyou.txt -o wl.txt
 ```
 
 Note: if the input wordlist has root permission, you need to use `sudo`.
