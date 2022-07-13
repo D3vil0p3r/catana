@@ -131,7 +131,8 @@ do
             ;;
         "Quit")
             kill -s TERM $TOP_PID
-            break;
+            break
+	    ;;
         *) echo "Invalid option" > /dev/stderr;;
     esac
 done
