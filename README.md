@@ -37,7 +37,7 @@ pacman -S catana
 # Usage
 
 ```
-catana -i rockyou.txt\
+catana -i rockyou.txt
 catana -i rockyou.txt -o wl.txt
 ```
 
